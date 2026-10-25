@@ -165,3 +165,5 @@ VAHAK-Final/
 ---
 
 *Built for academic demonstration. Tech stack: React 18 · TypeScript · Vite · Tailwind CSS · React-Leaflet · Lucide Icons*
+
+Development preview deployment test.
