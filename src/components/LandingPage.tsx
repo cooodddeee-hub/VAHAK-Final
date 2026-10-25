@@ -11,7 +11,7 @@ export default function LandingPage() {
     { value: 'Pune', label: 'City Focus' },
     { value: 'PMPML', label: 'Bus Network' },
     { value: 'OTP', label: 'Verified Delivery' },
-    { value: 'Demo', label: 'Academic Project' },
+    { value: 'VAHAK', label: 'Parcel Service' },
   ];
 
   const features = [
@@ -79,7 +79,7 @@ export default function LandingPage() {
       <section className="max-w-7xl mx-auto px-6 py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-blue-400/10 text-blue-300 text-sm font-medium mb-8 animate-fade-in">
           <Star className="w-4 h-4" />
-          Academic Demo · Pune PMPML Parcel Concept
+          Pune PMPML Parcel Service · VAHAK Platform
         </div>
         <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight animate-slide-up">
           Pune Parcel via
@@ -88,17 +88,17 @@ export default function LandingPage() {
           </span>
         </h1>
         <p className="text-white/60 text-xl max-w-2xl mx-auto mb-6 leading-relaxed animate-fade-in">
-          A demo application exploring last-mile parcel delivery coordination
+          A platform exploring last-mile parcel delivery coordination
           using Pune's city bus network. OTP-verified handover, multi-stop routes,
           and role-based dashboards.
         </p>
         <p className="text-white/30 text-sm max-w-xl mx-auto mb-10">
-          ⚠️ This is an academic concept demo. Not an official PMPML service.
+          ⚠️ Concept platform. Not an official PMPML service.
           PMPML does not currently offer a commercial parcel delivery programme.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
           <button onClick={() => setShowLogin(true)} className="btn-primary flex items-center gap-2 text-lg px-8 py-4">
-            Explore Demo <ArrowRight className="w-5 h-5" />
+            Explore Platform <ArrowRight className="w-5 h-5" />
           </button>
           <button onClick={() => setShowLogin(true)} className="btn-secondary text-lg px-8 py-4">
             Track Parcel
@@ -135,7 +135,7 @@ export default function LandingPage() {
 
       {/* Pune Routes */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold text-white text-center mb-3">Demo Pune Routes</h2>
+        <h2 className="text-3xl font-bold text-white text-center mb-3">Pune PMPML Routes</h2>
         <p className="text-white/30 text-sm text-center mb-10">Illustrative stops — not official PMPML schedules</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {routes.map((route, i) => (
@@ -174,11 +174,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Demo CTA */}
+      {/* Platform CTA */}
       <section className="max-w-4xl mx-auto px-6 py-16">
         <div className="glass-card p-8 text-center border-blue-400/30">
-          <h2 className="text-2xl font-bold text-white mb-3">Try the Demo</h2>
-          <p className="text-white/60 mb-6">Four pre-loaded demo accounts — click any to auto-fill credentials</p>
+          <h2 className="text-2xl font-bold text-white mb-3">Try the Platform</h2>
+          <p className="text-white/60 mb-6">Four pre-loaded sample accounts — click any to auto-fill credentials</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
             {[
               { role: 'Customer', email: 'customer@vahak.in', color: '#3b82f6' },
@@ -194,7 +194,7 @@ export default function LandingPage() {
             ))}
           </div>
           <button onClick={() => setShowLogin(true)} className="btn-primary text-lg px-10 py-4">
-            Start Demo →
+            Start Platform →
           </button>
         </div>
       </section>
@@ -203,9 +203,9 @@ export default function LandingPage() {
       <footer className="border-t border-white/10 py-8 text-center text-white/30 text-sm">
         <div className="flex items-center justify-center gap-2 mb-2">
           <Truck className="w-4 h-4" />
-          <span className="font-bold text-white/50">VAHAK · PMPML Pune Demo</span>
+          <span className="font-bold text-white/50">VAHAK · PMPML Pune Parcel Service</span>
         </div>
-        <p>Academic project. Not affiliated with or endorsed by PMPML or Maharashtra government.</p>
+        <p>Concept platform. Not affiliated with or endorsed by PMPML or Maharashtra government.</p>
         <p className="mt-1">Data stored in browser localStorage only. Map tiles require internet. OTP is not sent via SMS.</p>
       </footer>
 

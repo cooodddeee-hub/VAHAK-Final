@@ -87,7 +87,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       (u) => u.email.toLowerCase() === email.toLowerCase() && u.password === password
     );
     if (user) { setCurrentUser(user); setActiveTab('dashboard'); return { success: true, message: 'Login successful' }; }
-    return { success: false, message: 'Invalid credentials. Use the demo accounts.' };
+    return { success: false, message: 'Invalid credentials. Use the platform accounts.' };
   };
 
   const logout = () => { setCurrentUser(null); setActiveTab('dashboard'); };

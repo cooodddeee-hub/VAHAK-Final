@@ -22,7 +22,7 @@ export default function DeliveryReceipt({ parcel, onClose }: Props) {
               <Truck className="w-8 h-8" />
               <div>
                 <h1 className="text-2xl font-black tracking-wider">VAHAK</h1>
-                <p className="text-white/60 text-xs">PMPML Parcel Service · Demo Application</p>
+                <p className="text-white/60 text-xs">PMPML Parcel Service · Platform Application</p>
               </div>
             </div>
             <button onClick={onClose} className="no-print text-white/60 hover:text-white transition-colors">
@@ -144,7 +144,7 @@ export default function DeliveryReceipt({ parcel, onClose }: Props) {
           </div>
 
           <div className="mt-4 p-3 rounded-lg bg-gray-50 text-center text-xs text-gray-400 border border-dashed border-gray-200">
-            Academic demo — VAHAK PMPML Parcel Service. Not an official PMPML document.<br />
+            Concept platform — VAHAK PMPML Parcel Service. Not an official PMPML document.<br />
             Data stored in browser only. OTP not displayed on this receipt.
           </div>
         </div>

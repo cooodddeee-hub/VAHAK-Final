@@ -88,7 +88,7 @@ export default function BookingForm() {
       weight: parseFloat(form.weight) || 1,
       description: form.description || undefined,
       status: 'booked',
-      timeline: [{ status: 'booked', timestamp: now, location: pickupLocation, description: 'Booking confirmed via VAHAK PMPML Demo' }],
+      timeline: [{ status: 'booked', timestamp: now, location: pickupLocation, description: 'Booking confirmed via VAHAK PMPML Platform' }],
       createdAt: now,
       estimatedDelivery: eta,
       amount: calcAmount(),
@@ -174,7 +174,7 @@ export default function BookingForm() {
             <div className="flex items-start gap-2 mt-3 p-2 rounded-lg bg-white/5">
               <Info className="w-3 h-3 text-white/30 flex-shrink-0 mt-0.5" />
               <p className="text-white/30 text-xs leading-relaxed">
-                The receiver must enter this OTP to confirm delivery. This OTP is not shown elsewhere. This is a demo — no SMS is actually sent.
+                The receiver must enter this OTP to confirm delivery. This OTP is not shown elsewhere. This is a platform — no SMS is actually sent.
               </p>
             </div>
           </div>

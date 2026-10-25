@@ -294,7 +294,7 @@ export default function ReceiverDashboard() {
                   )}
 
                   <p className="text-white/20 text-xs mt-3 text-center">
-                    Demo only – no SMS sent. OTP shown on sender's booking confirmation.
+                    Platform only – no SMS sent. OTP shown on sender's booking confirmation.
                   </p>
                 </div>
               )}

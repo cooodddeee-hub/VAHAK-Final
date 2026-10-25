@@ -1,6 +1,6 @@
 import { User, Parcel, Bus, Notification, PmpmlStop, PmpmlRoute } from '../types';
 
-// ─── Demo Users ────────────────────────────────────────────────────────────
+// ─── Platform Users ──────────────────────────────────────────────────────────
 export const DEMO_USERS: User[] = [
   {
     id: 'u1', name: 'Rahul Sharma', email: 'customer@vahak.in',
@@ -20,7 +20,7 @@ export const DEMO_USERS: User[] = [
   },
 ];
 
-// ─── PMPML Pune Stops (illustrative demo data) ────────────────────────────
+// ─── PMPML Pune Stops (illustrative data) ────────────────────────────
 // Coordinates are real Pune geo-locations; routes are illustrative and not official.
 export const PMPML_STOPS: PmpmlStop[] = [
   { id: 's1',  name: 'Swargate Bus Terminal',    coords: [18.5018, 73.8674], type: 'major' },
@@ -46,32 +46,32 @@ export const PMPML_STOPS: PmpmlStop[] = [
 export const STOP_BY_ID = Object.fromEntries(PMPML_STOPS.map((s) => [s.id, s]));
 export const STOP_BY_NAME = Object.fromEntries(PMPML_STOPS.map((s) => [s.name, s]));
 
-// ─── PMPML Demo Routes (illustrative, NOT official PMPML schedules) ───────
+// ─── PMPML Routes (illustrative, NOT official PMPML schedules) ───────
 export const PMPML_ROUTES: PmpmlRoute[] = [
   {
-    id: 'r1', name: 'Demo Route A: Katraj – Swargate – Shivajinagar',
+    id: 'r1', name: 'Route A: Katraj – Swargate – Shivajinagar',
     stopIds: ['s2', 's3', 's1', 's6', 's5'],
-    color: '#3b82f6', note: 'Illustrative demo route',
+    color: '#3b82f6', note: 'Illustrative route',
   },
   {
-    id: 'r2', name: 'Demo Route B: Swargate – Pune Station – Vishrantwadi',
+    id: 'r2', name: 'Route B: Swargate – Pune Station – Vishrantwadi',
     stopIds: ['s1', 's4', 's14'],
-    color: '#10b981', note: 'Illustrative demo route',
+    color: '#10b981', note: 'Illustrative route',
   },
   {
-    id: 'r3', name: 'Demo Route C: Shivajinagar – Aundh – Baner – Hinjawadi',
+    id: 'r3', name: 'Route C: Shivajinagar – Aundh – Baner – Hinjawadi',
     stopIds: ['s5', 's17', 's16', 's15', 's11'],
-    color: '#f59e0b', note: 'Illustrative demo route',
+    color: '#f59e0b', note: 'Illustrative route',
   },
   {
-    id: 'r4', name: 'Demo Route D: Hadapsar – Pune Station – Shivajinagar – Pimpri',
+    id: 'r4', name: 'Route D: Hadapsar – Pune Station – Shivajinagar – Pimpri',
     stopIds: ['s7', 's4', 's5', 's10', 's9'],
-    color: '#8b5cf6', note: 'Illustrative demo route',
+    color: '#8b5cf6', note: 'Illustrative route',
   },
   {
-    id: 'r5', name: 'Demo Route E: Kothrud – Deccan – Swargate – Hadapsar',
+    id: 'r5', name: 'Route E: Kothrud – Deccan – Swargate – Hadapsar',
     stopIds: ['s12', 's6', 's1', 's7'],
-    color: '#ec4899', note: 'Illustrative demo route',
+    color: '#ec4899', note: 'Illustrative route',
   },
 ];
 
@@ -90,20 +90,20 @@ export const PUNE_MARKERS = PMPML_STOPS.map((s) => ({
   type: s.type === 'major' ? 'hub' : s.type === 'depot' ? 'depot' : 'stop',
 }));
 
-// ─── PMPML Demo Buses (Pune city buses, illustrative) ────────────────────
+// ─── PMPML Buses (Pune city buses, illustrative) ────────────────────
 export const DEMO_BUSES: Bus[] = [
-  { id: 'b1', number: 'PMPML-101', route: 'Demo Route A', conductorId: 'u2', status: 'active', currentLocation: 'Swargate Bus Terminal' },
-  { id: 'b2', number: 'PMPML-204', route: 'Demo Route B', status: 'active', currentLocation: 'Pune Railway Station' },
-  { id: 'b3', number: 'PMPML-317', route: 'Demo Route C', status: 'active', currentLocation: 'Shivajinagar' },
-  { id: 'b4', number: 'PMPML-422', route: 'Demo Route D', status: 'inactive', currentLocation: 'Kothrud Depot' },
-  { id: 'b5', number: 'PMPML-509', route: 'Demo Route E', status: 'maintenance', currentLocation: 'Kothrud Depot' },
+  { id: 'b1', number: 'PMPML-101', route: 'Route A', conductorId: 'u2', status: 'active', currentLocation: 'Swargate Bus Terminal' },
+  { id: 'b2', number: 'PMPML-204', route: 'Route B', status: 'active', currentLocation: 'Pune Railway Station' },
+  { id: 'b3', number: 'PMPML-317', route: 'Route C', status: 'active', currentLocation: 'Shivajinagar' },
+  { id: 'b4', number: 'PMPML-422', route: 'Route D', status: 'inactive', currentLocation: 'Kothrud Depot' },
+  { id: 'b5', number: 'PMPML-509', route: 'Route E', status: 'maintenance', currentLocation: 'Kothrud Depot' },
 ];
 
 // ─── Pickup/Destination lists for BookingForm ─────────────────────────────
 export const PMPML_STOP_NAMES = PMPML_STOPS.map((s) => s.name);
 
 // ─── Sample Parcels (Pune-specific, with OTPs) ────────────────────────────
-// OTPs are included here because these are pre-seeded demo parcels.
+// OTPs are included here because these are pre-seeded sample parcels.
 // In a real system, OTPs are never stored in plain text on the client.
 export const SAMPLE_PARCELS: Parcel[] = [
   {
@@ -127,7 +127,7 @@ export const SAMPLE_PARCELS: Parcel[] = [
     conductorId: 'u2',
     conductorName: 'Ajay Patil',
     timeline: [
-      { status: 'booked',    timestamp: '2024-07-10T09:00:00', location: 'Swargate Bus Terminal', description: 'Booking confirmed via VAHAK demo' },
+      { status: 'booked',    timestamp: '2024-07-10T09:00:00', location: 'Swargate Bus Terminal', description: 'Booking confirmed via VAHAK platform' },
       { status: 'assigned',  timestamp: '2024-07-10T10:00:00', location: 'Swargate Bus Terminal', description: 'Assigned to bus PMPML-101, conductor Ajay Patil' },
       { status: 'picked_up', timestamp: '2024-07-10T11:30:00', location: 'Swargate Bus Terminal', description: 'Parcel picked up by conductor' },
       { status: 'in_transit',timestamp: '2024-07-10T13:00:00', location: 'Pune Railway Station',  description: 'Bus en route via Railway Station' },

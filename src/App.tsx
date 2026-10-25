@@ -25,11 +25,11 @@ function AppContent() {
     if (activeTab === 'map') return (
       <div className="glass-card p-6">
         <h2 className="text-xl font-bold text-white mb-2">Pune PMPML Routes — Live Map</h2>
-        <p className="text-white/40 text-sm mb-5">Illustrative demo routes using Pune city stops. Not official PMPML schedules.</p>
+        <p className="text-white/40 text-sm mb-5">Illustrative routes using Pune city stops. Not official PMPML schedules.</p>
         <PuneMap height="500px" showAllRoutes />
         <div className="mt-4 p-4 rounded-xl bg-amber-500/10 border border-amber-400/20 text-amber-300 text-sm space-y-1">
           <p>⚠️ Map tiles require an internet connection (OpenStreetMap).</p>
-          <p>⚠️ Routes are straight-line visualisations — not road-following. This is a demo limitation.</p>
+          <p>⚠️ Routes are straight-line visualisations — not road-following. This is a platform limitation.</p>
           <p>⚠️ Bus positions are simulated. No real GPS tracking is implemented.</p>
         </div>
       </div>

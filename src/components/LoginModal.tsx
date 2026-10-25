@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { X, Truck, Eye, EyeOff, LogIn } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
-const DEMO_ACCOUNTS = [
+const PLATFORM_ACCOUNTS = [
   { role: 'Customer', email: 'customer@vahak.in', password: 'customer123', color: '#3b82f6', desc: 'Book & track parcels' },
   { role: 'Conductor', email: 'conductor@vahak.in', password: 'conductor123', color: '#10b981', desc: 'Manage shipments' },
   { role: 'Receiver', email: 'receiver@vahak.in', password: 'receiver123', color: '#f59e0b', desc: 'Confirm delivery' },
@@ -33,7 +33,7 @@ export default function LoginModal({ onClose }: Props) {
     }
   };
 
-  const fillAccount = (acc: typeof DEMO_ACCOUNTS[0]) => {
+  const fillAccount = (acc: typeof PLATFORM_ACCOUNTS[0]) => {
     setEmail(acc.email);
     setPassword(acc.password);
     setError('');
@@ -58,11 +58,11 @@ export default function LoginModal({ onClose }: Props) {
           <p className="text-white/50 text-sm mt-1">Sign in to access your dashboard</p>
         </div>
 
-        {/* Demo accounts */}
+        {/* Platform accounts */}
         <div className="mb-6">
-          <p className="text-white/40 text-xs uppercase tracking-wider mb-3">Quick Login (Demo Accounts)</p>
+          <p className="text-white/40 text-xs uppercase tracking-wider mb-3">Quick Login (Platform Accounts)</p>
           <div className="grid grid-cols-2 gap-2">
-            {DEMO_ACCOUNTS.map((acc, i) => (
+            {PLATFORM_ACCOUNTS.map((acc, i) => (
               <button key={i} onClick={() => fillAccount(acc)}
                 className="p-3 rounded-xl border text-left transition-all hover:scale-105 active:scale-95"
                 style={{ borderColor: `${acc.color}40`, background: `${acc.color}15` }}>
@@ -122,7 +122,7 @@ export default function LoginModal({ onClose }: Props) {
         </form>
 
         <p className="text-white/25 text-xs text-center mt-5">
-          ⚠️ Demo only. Not secure. Uses browser localStorage.
+          ⚠️ Platform only. Not secure. Uses browser localStorage.
         </p>
       </div>
     </div>

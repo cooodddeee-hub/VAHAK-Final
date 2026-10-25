@@ -45,7 +45,7 @@ export default function CustomerDashboard() {
       <div className="glass-card p-6 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-white">Hello, {currentUser?.name?.split(' ')[0]}! 👋</h1>
-          <p className="text-white/50 mt-1 text-sm">PMPML Parcel Service · Pune City Demo</p>
+          <p className="text-white/50 mt-1 text-sm">PMPML Parcel Service · Pune City Platform</p>
         </div>
         <button className="btn-primary flex items-center gap-2" onClick={() => setActiveTab('book')}>
           <Package className="w-5 h-5" /> Book Parcel
@@ -194,7 +194,7 @@ export default function CustomerDashboard() {
                     </button>
                   </div>
                   <p className="text-white/30 text-xs mt-2">
-                    The receiver must enter this in their dashboard. Demo only — no SMS is sent.
+                    The receiver must enter this in their dashboard. Platform only — no SMS is sent.
                   </p>
                 </div>
               )}

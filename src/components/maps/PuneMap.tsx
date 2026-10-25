@@ -44,7 +44,7 @@ interface Props {
   height?: string;
   /** When provided, draw only these stops (by name) in order */
   selectedStopNames?: string[];
-  /** When true, show all demo routes instead of selected stops */
+  /** When true, show all routes instead of selected stops */
   showAllRoutes?: boolean;
 }
 
@@ -88,7 +88,7 @@ export default function PuneMap({ height = '400px', selectedStopNames, showAllRo
         {/* Fitter: adjusts viewport when stops change */}
         {polylinePositions.length > 0 && <MapFitter positions={polylinePositions} />}
 
-        {/* All demo routes (background) */}
+        {/* All routes (background) */}
         {(showAllRoutes || !selectedStopNames || selectedStopNames.length === 0) &&
           PUNE_ROUTES.map((route) => (
             <Polyline key={route.id} positions={route.waypoints}
@@ -97,7 +97,7 @@ export default function PuneMap({ height = '400px', selectedStopNames, showAllRo
                 <div className="text-white">
                   <strong style={{ fontSize: '12px' }}>{route.name}</strong>
                   <br />
-                  <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)' }}>Illustrative demo route</span>
+                  <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)' }}>Illustrative route</span>
                 </div>
               </Popup>
             </Polyline>
@@ -159,7 +159,7 @@ export default function PuneMap({ height = '400px', selectedStopNames, showAllRo
                   <strong>{stop.name}</strong>
                   <br />
                   <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', textTransform: 'capitalize' }}>
-                    {stop.type} PMPML stop · Demo data
+                    {stop.type} PMPML stop · Illustrative data
                   </span>
                 </div>
               </Popup>
@@ -195,7 +195,7 @@ export default function PuneMap({ height = '400px', selectedStopNames, showAllRo
               {item.label}
             </div>
           ))}
-          <span className="text-white/25 text-xs ml-auto">Illustrative PMPML demo data</span>
+          <span className="text-white/25 text-xs ml-auto">Illustrative PMPML data</span>
         </div>
       )}
     </div>

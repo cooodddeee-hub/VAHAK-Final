@@ -59,7 +59,7 @@ export default function AdminDashboard() {
         style={{ borderColor: 'rgba(245,158,11,0.3)', background: 'rgba(245,158,11,0.06)' }}>
         <Shield className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
         <p className="text-amber-300/70 text-xs">
-          Academic demo. Routes and buses are illustrative and not official PMPML schedules.
+          Concept platform. Routes and buses are illustrative and not official PMPML schedules.
           Delivery requires receiver OTP — conductors cannot bypass this.
         </p>
       </div>
@@ -227,13 +227,13 @@ export default function AdminDashboard() {
       <div className="glass-card p-6">
         <div className="flex items-center gap-2 mb-5">
           <Truck className="w-5 h-5 text-blue-400" />
-          <h2 className="text-lg font-bold text-white">PMPML Fleet (Demo)</h2>
+          <h2 className="text-lg font-bold text-white">PMPML Fleet</h2>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/10">
-                {['Bus', 'Demo Route', 'Status', 'Location'].map((h) => (
+                {['Bus', 'Route', 'Status', 'Location'].map((h) => (
                   <th key={h} className="text-white/40 text-left pb-3 pr-4 font-medium text-xs uppercase tracking-wider">{h}</th>
                 ))}
               </tr>

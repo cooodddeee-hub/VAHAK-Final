@@ -46,7 +46,7 @@ export default function Sidebar() {
           </div>
           <div>
             <div className="text-xl font-black text-white tracking-wider">VAHAK</div>
-            <div className="text-white/30 text-xs">Final Demo</div>
+            <div className="text-white/30 text-xs">Parcel Service</div>
           </div>
         </div>
       </div>
