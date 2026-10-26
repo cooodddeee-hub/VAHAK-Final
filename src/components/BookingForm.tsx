@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Package, User, Phone, Mail, Weight, ChevronRight, CheckCircle, Copy, Shield, Info } from 'lucide-react';
+import { Package, User, Phone, Mail, Weight, ChevronRight, CheckCircle, Copy, Shield, Info, Users } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { Parcel, ParcelType } from '../types';
+import { DEMO_USERS } from '../data/sampleData';
 import StopRoutePicker from './maps/StopRoutePicker';
 import PuneMap from './maps/PuneMap';
 
@@ -34,12 +35,14 @@ export default function BookingForm() {
   // Stops: [origin, ...intermediates, destination]
   const [stops, setStops] = useState<string[]>(['', '']);
 
+  // Preselect the primary demo receiver (Priya Desai) by default
+  const defaultReceiver = DEMO_USERS.find(u => u.id === 'u3');
   const [form, setForm] = useState({
     senderName: currentUser?.name || '',
     senderPhone: currentUser?.phone || '',
-    receiverName: '',
-    receiverPhone: '',
-    receiverEmail: '',
+    receiverName: defaultReceiver?.name || '',
+    receiverPhone: defaultReceiver?.phone || '',
+    receiverEmail: defaultReceiver?.email || '',
     parcelType: 'documents' as ParcelType,
     weight: '',
     description: '',
@@ -72,12 +75,17 @@ export default function BookingForm() {
     const now = new Date().toISOString();
     const eta = new Date(Date.now() + 6 * 3600 * 1000).toISOString();
 
+    const receiverEmail = form.receiverEmail?.trim().toLowerCase();
+    const receiverUser = DEMO_USERS.find(
+      (u) => u.email.toLowerCase() === receiverEmail
+    );
     const newParcel: Parcel = {
       id,
       trackingNumber: tracking,
       senderId: currentUser!.id,
       senderName: form.senderName,
       senderPhone: form.senderPhone,
+      receiverId: receiverUser?.id || undefined,
       receiverName: form.receiverName,
       receiverPhone: form.receiverPhone,
       receiverEmail: form.receiverEmail || undefined,
@@ -279,6 +287,30 @@ export default function BookingForm() {
               <div className="mt-4">
                 <label className="text-white/60 text-sm mb-1.5 flex items-center gap-1 block"><Mail className="w-3 h-3" /> Receiver Email (optional)</label>
                 <input className="input-field" value={form.receiverEmail} onChange={(e) => update('receiverEmail', e.target.value)} placeholder="receiver@example.com" />
+              </div>
+              {/* Demo Receiver Selection */}
+              <div className="mt-4">
+                <label className="text-white/60 text-sm mb-1.5 flex items-center gap-1 block"><Users className="w-3 h-3" /> Select Existing Demo Receiver (optional)</label>
+                <select
+                  className="input-field"
+                  value={form.receiverEmail}
+                  onChange={(e) => {
+                    const email = e.target.value;
+                    update('receiverEmail', email);
+                    if (email) {
+                      const selected = DEMO_USERS.find(u => u.email.toLowerCase() === email.toLowerCase());
+                      if (selected) {
+                        update('receiverName', selected.name);
+                        update('receiverPhone', selected.phone || '');
+                      }
+                    }
+                  }}
+                >
+                  <option value="">-- Select a demo receiver --</option>
+                  {DEMO_USERS.filter(u => u.role === 'receiver').map(u => (
+                    <option key={u.id} value={u.email}>{u.name} ({u.email})</option>
+                  ))}
+                </select>
               </div>
             </div>
 
