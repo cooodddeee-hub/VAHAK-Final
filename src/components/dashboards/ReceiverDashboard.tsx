@@ -28,7 +28,7 @@ export default function ReceiverDashboard() {
   const myParcels = parcels.filter(
     (p) =>
       p.receiverId === currentUser?.id ||
-      p.receiverEmail?.toLowerCase() === currentUser?.email.toLowerCase()
+      p.receiverEmail?.trim()?.toLowerCase() === currentUser?.email?.trim()?.toLowerCase()
   );
 
   const pendingOtp = myParcels.filter(
